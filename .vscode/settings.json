@@ -1,0 +1,9 @@
+{
+	"files.associations": {
+		"bron_kerbosch.h": "c",
+		"stdint.h": "c",
+		"io.h": "c",
+		"graph_mat.h": "c",
+		"graph_list.h": "c"
+	}
+}
