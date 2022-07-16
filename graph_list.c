@@ -40,7 +40,7 @@ GraphL *newGraphL(GraphM *adjMat)
 
 void deleteGraphL(GraphL *g)
 {
-	if(g->vertexList == NULL)
+	if(!g->vertexList)
 	{
 		return;
 	}
@@ -48,12 +48,15 @@ void deleteGraphL(GraphL *g)
 	Vertex *temp, *ptr;
 	for (int i = 0; i < g->numVerts; i++)
 	{
-		ptr = &(g->vertexList[i]);
+		ptr = &g->vertexList[i];
 		while(ptr != NULL)
 		{
 			temp = ptr;
 			ptr = ptr->next;
-			free(temp);
+			if(temp)
+			{
+				free(temp);
+			}
 		}
 		free(&(g->vertexList[i]));
 	}

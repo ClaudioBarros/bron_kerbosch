@@ -15,7 +15,6 @@ void printList(uint32_t *list)
 
 void printMaximalCliques(uint32_t **maximalCliques)
 {
-	printf("..teste..\n");
 	for(int i = 0; i < arrlen(maximalCliques); i++)
 	{
 		printf("Maximal Cliques:\n\n");
@@ -78,9 +77,9 @@ void bk(uint32_t *R, uint32_t *P, uint32_t *X,
 	printList(X);
 	printf("\n");
 
-	printf("arrlen(R): %d\n", (int) arrlen(R));
-	printf("arrlen(P): %d\n", (int) arrlen(P));
-	printf("arrlen(X): %d\n", (int) arrlen(X));
+	//printf("arrlen(R): %d\n", (int) arrlen(R));
+	//printf("arrlen(P): %d\n", (int) arrlen(P));
+	//printf("arrlen(X): %d\n", (int) arrlen(X));
 
 	if(!arrlen(P) && !arrlen(X))
 	{
@@ -93,9 +92,9 @@ void bk(uint32_t *R, uint32_t *P, uint32_t *X,
 		}
 		arrput(maximalCliques, clique);
 
-		printf(" ************* MAXIMAL CLIQUE : ");
+		printf("\n**** MAXIMAL CLIQUE : ");
 		printList(clique);
-		printf("************ \n");
+		printf(" **** \n\n");
 		return;
 	}
 	
@@ -118,7 +117,7 @@ void bk(uint32_t *R, uint32_t *P, uint32_t *X,
 		//P intersection N(v)
 		uint32_t *neighbors = getVertexNeighbors(g, P[i]);
 		
-		printf("	- vertex neighbors: ");
+		printf("vertex neighbors: ");
 		printList(neighbors);
 		printf("\n\n");
 
